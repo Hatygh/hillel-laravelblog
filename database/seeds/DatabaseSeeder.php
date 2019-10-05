@@ -42,5 +42,22 @@ class DatabaseSeeder extends Seeder
         factory(\App\Tag::class, 10)->create();
 
         factory(\App\Post::class, 50)->create();
+
+        $posts = \App\Post::all();
+        $post_tag = [];
+        foreach($posts as $post)
+        {
+            $limit = rand(3, 6);
+            $tags = \App\Tag::inRandomOrder()->limit($limit)->get();
+            foreach ($tags as $tag) {
+                $post_tag[] = [
+                    'post_id' => $post->id,
+                    'tag_id' => $tag->id,
+                    'created_at' => date('Y-m-d'),
+                    'updated_at' => date('Y-m-d'),
+                ];
+            }
+        }
+        DB::table('post_tag')->insert($post_tag);
     }
 }

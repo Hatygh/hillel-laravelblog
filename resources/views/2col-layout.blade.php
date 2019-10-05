@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <img src="img/core-img/breadcrumb-line.png" alt="">
+                    <img src="/img/core-img/breadcrumb-line.png" alt="">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
@@ -40,10 +40,9 @@
                                 <h6>Categories</h6>
                             </div>
                             <ol class="foode-catagories">
-                                <li><a href="#"><span><i class="fa fa-stop" aria-hidden="true"></i> Drink</span> <span>(18)</span></a></li>
-                                <li><a href="#"><span><i class="fa fa-stop" aria-hidden="true"></i> Foody</span> <span>(28)</span></a></li>
-                                <li><a href="#"><span><i class="fa fa-stop" aria-hidden="true"></i> Tea</span> <span>(15)</span></a></li>
-                                <li><a href="#"><span><i class="fa fa-stop" aria-hidden="true"></i> Coffee</span> <span>(27)</span></a></li>
+                                @foreach($categories as $category)
+                                <li><a href="{{ route('blog.category', $category->slug) }}"><span><i class="fa fa-stop" aria-hidden="true"></i> {{ $category->name }}</span> <span>({{ $category->posts()->count() }})</span></a></li>
+                                @endforeach
                             </ol>
                         </div>
 
@@ -58,7 +57,7 @@
                             @foreach($latest_posts as $latest_post)
                             <div class="single-latest-post d-flex">
                                 <div class="post-thumb">
-                                    <img src="img/blog-img/{{ $latest_post->preview_image }}" alt="">
+                                    <img src="/img/blog-img/{{ $latest_post->preview_image }}" alt="">
                                 </div>
                                 <div class="post-content">
                                     <a href="#" class="post-title">
@@ -73,7 +72,7 @@
                         <!-- ##### Single Widget Area ##### -->
                         <div class="single-widget-area">
                             <!-- Adds -->
-                            <a href="#"><img src="img/blog-img/add.png" alt=""></a>
+                            <a href="#"><img src="/img/blog-img/add.png" alt=""></a>
                         </div>
 
                         <!-- ##### Single Widget Area ##### -->

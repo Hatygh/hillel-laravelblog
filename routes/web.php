@@ -33,6 +33,14 @@ Route::get('/blog', function () {
     ]);
 })->name('blog.blog');
 
-Route::get('/post', function () {
-    return view('post');
+Route::get('/post/{post}', function (\App\Post $post) {
+    //$post = \App\Post::find($id);
+    $post->increment('views');
+    return view('post', ['post' => $post]);
 })->name('blog.post');
+
+Route::get('/blog/category/{slug}', function ($slug) {
+    $category = \App\Category::where('slug', '=', $slug)->first();
+    $posts = $category->posts()->latest()->paginate(5);
+    return view('blog', ['posts' => $posts]);
+})->name('blog.category');

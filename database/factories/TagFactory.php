@@ -3,7 +3,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use App\Tag;
 //use Faker\Generator as Faker;
-
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +18,10 @@ use App\Tag;
 
 $faker = Faker\Factory::create('ru_Ru');
 $factory->define(Tag::class, function (Faker\Generator $faker) {
+    $name = $faker->unique()->word;
+    $slug = Str::slug($name, '-');
     return [
-        'name' => $faker->unique()->word,
+        'name' => $name,
+        'slug' => $slug,
     ];
 });

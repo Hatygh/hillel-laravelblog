@@ -9,7 +9,7 @@ $factory->define(Post::class, function (Faker\Generator $faker) {
     return [
         'title' => $faker->sentence,
         'preview_text' => $faker->sentences(3, true),
-        'body' => $faker->realText($maxNbChars = 200, $indexSize = 2),
+        'body' => $faker->realText($maxNbChars = 2000, $indexSize = 2),
         'user_id' => $faker->numberBetween(1, 10),
         'category_id' => $faker->numberBetween(1, 10),
         'views' => $faker->numberBetween(0, 999),

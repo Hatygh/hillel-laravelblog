@@ -15,37 +15,37 @@
                 <div class="instagram-slides owl-carousel">
                     <!-- Single Instagram Slide -->
                     <div class="single-instagram-slide">
-                        <img src="img/blog-img/insta1.jpg" alt="">
+                        <img src="/img/blog-img/insta1.jpg" alt="">
                         <a href="#"><i class="fa fa-instagram"></i>Follow Me</a>
                     </div>
 
                     <!-- Single Instagram Slide -->
                     <div class="single-instagram-slide">
-                        <img src="img/blog-img/insta2.jpg" alt="">
+                        <img src="/img/blog-img/insta2.jpg" alt="">
                         <a href="#"><i class="fa fa-instagram"></i>Follow Me</a>
                     </div>
 
                     <!-- Single Instagram Slide -->
                     <div class="single-instagram-slide">
-                        <img src="img/blog-img/insta3.jpg" alt="">
+                        <img src="/img/blog-img/insta3.jpg" alt="">
                         <a href="#"><i class="fa fa-instagram"></i>Follow Me</a>
                     </div>
 
                     <!-- Single Instagram Slide -->
                     <div class="single-instagram-slide">
-                        <img src="img/blog-img/insta4.jpg" alt="">
+                        <img src="/img/blog-img/insta4.jpg" alt="">
                         <a href="#"><i class="fa fa-instagram"></i>Follow Me</a>
                     </div>
 
                     <!-- Single Instagram Slide -->
                     <div class="single-instagram-slide">
-                        <img src="img/blog-img/insta5.jpg" alt="">
+                        <img src="/img/blog-img/insta5.jpg" alt="">
                         <a href="#"><i class="fa fa-instagram"></i>Follow Me</a>
                     </div>
 
                     <!-- Single Instagram Slide -->
                     <div class="single-instagram-slide">
-                        <img src="img/blog-img/insta6.jpg" alt="">
+                        <img src="/img/blog-img/insta6.jpg" alt="">
                         <a href="#"><i class="fa fa-instagram"></i>Follow Me</a>
                     </div>
                 </div>

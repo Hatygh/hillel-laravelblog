@@ -249,7 +249,7 @@
                     <div class="single-blog-post d-flex flex-wrap mt-50">
                         <!-- Thumbnail -->
                         <div class="post-thumbnail mb-50">
-                            <a href="#"><img src="img/blog-img/{{ $post->preview_image }}" alt=""></a>
+                            <a href="#"><img src="/img/blog-img/{{ $post->preview_image }}" alt=""></a>
                         </div>
                         <!-- Content -->
                         <div class="post-content mb-50">
@@ -266,7 +266,7 @@
                             <a href="#" class="read-more-btn">Continue Reading <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                         </div>
                         <!-- Post Curve Line -->
-                        <img class="post-curve-line" src="img/core-img/post-curve-line.png" alt="">
+                        <img class="post-curve-line" src="/img/core-img/post-curve-line.png" alt="">
                     </div>
                     @endforeach
                 </div>
@@ -294,11 +294,11 @@
                         </div>
                         <!-- Thumbnail -->
                         <div class="about-thumbnail">
-                            <img src="img/blog-img/about-me.jpg" alt="">
+                            <img src="/img/blog-img/about-me.jpg" alt="">
                         </div>
                         <!-- Content -->
                         <div class="widget-content text-center">
-                            <img src="img/core-img/signature.png" alt="">
+                            <img src="/img/core-img/signature.png" alt="">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
                         </div>
                     </div>
@@ -331,7 +331,7 @@
                         <!-- Single Latest Posts -->
                         <div class="single-latest-post d-flex">
                             <div class="post-thumb">
-                                <img src="img/blog-img/lp1.jpg" alt="">
+                                <img src="/img/blog-img/lp1.jpg" alt="">
                             </div>
                             <div class="post-content">
                                 <a href="#" class="post-title">
@@ -344,7 +344,7 @@
                         <!-- Single Latest Posts -->
                         <div class="single-latest-post d-flex">
                             <div class="post-thumb">
-                                <img src="img/blog-img/lp2.jpg" alt="">
+                                <img src="/img/blog-img/lp2.jpg" alt="">
                             </div>
                             <div class="post-content">
                                 <a href="#" class="post-title">
@@ -357,7 +357,7 @@
                         <!-- Single Latest Posts -->
                         <div class="single-latest-post d-flex">
                             <div class="post-thumb">
-                                <img src="img/blog-img/lp3.jpg" alt="">
+                                <img src="/img/blog-img/lp3.jpg" alt="">
                             </div>
                             <div class="post-content">
                                 <a href="#" class="post-title">
@@ -370,7 +370,7 @@
                         <!-- Single Latest Posts -->
                         <div class="single-latest-post d-flex">
                             <div class="post-thumb">
-                                <img src="img/blog-img/lp4.jpg" alt="">
+                                <img src="/img/blog-img/lp4.jpg" alt="">
                             </div>
                             <div class="post-content">
                                 <a href="#" class="post-title">
@@ -383,7 +383,7 @@
                         <!-- Single Latest Posts -->
                         <div class="single-latest-post d-flex">
                             <div class="post-thumb">
-                                <img src="img/blog-img/lp5.jpg" alt="">
+                                <img src="/img/blog-img/lp5.jpg" alt="">
                             </div>
                             <div class="post-content">
                                 <a href="#" class="post-title">
@@ -398,7 +398,7 @@
                     <!-- ##### Single Widget Area ##### -->
                     <div class="single-widget-area">
                         <!-- Adds -->
-                        <a href="#"><img src="img/blog-img/add.png" alt=""></a>
+                        <a href="#"><img src="/img/blog-img/add.png" alt=""></a>
                     </div>
 
                     <!-- ##### Single Widget Area ##### -->
