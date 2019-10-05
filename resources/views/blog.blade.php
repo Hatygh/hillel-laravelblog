@@ -29,7 +29,7 @@
                     <h4>{{ $post->title }}</h4>
                 </a>
                 <div class="post-meta">
-                    <a href="#"><span>by</span> {{ $post->user->name }}</a>
+                    <a href="{{ route('blog.author', $post->user->slug) }}"><span>by</span> {{ $post->user->name }}</a>
                     <a href="#"><i class="fa fa-eye"></i> {{ $post->views }}</a>
                     <a href="#"><i class="fa fa-comments"></i> 08</a>
                 </div>
@@ -55,29 +55,7 @@
 @endsection
 
 @section('sidebar')
-    <!-- ##### Single Widget Area ##### -->
-    <div class="single-widget-area mt-0">
-        <form class="search-form" action="#" method="post">
-            <input type="search" name="search" class="form-control" placeholder="Search...">
-            <button><i class="fa fa-send"></i></button>
-        </form>
-    </div>
-
-    <!-- ##### Single Widget Area ##### -->
-    <div class="single-widget-area">
-        <!-- Title -->
-        <div class="widget-title">
-            <h6>About Me</h6>
-        </div>
-        <!-- Thumbnail -->
-        <div class="about-thumbnail">
-            <img src="/img/blog-img/about-me.jpg" alt="">
-        </div>
-        <!-- Content -->
-        <div class="widget-content text-center">
-            <img src="/img/core-img/signature.png" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-        </div>
-    </div>
+    @include('widget-search')
+    @include('widget-about-me')
     @parent
 @endsection

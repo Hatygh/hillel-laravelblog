@@ -18,8 +18,10 @@ use Illuminate\Support\Str;
 
 $faker = Faker\Factory::create('ru_Ru');
 $factory->define(User::class, function (Faker\Generator $faker) {
+    $name = $faker->unique()->name;
     return [
-        'name' => $faker->name,
+        'name' => $name,
+        'slug' => Str::slug($name),
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password

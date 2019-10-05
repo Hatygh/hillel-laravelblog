@@ -44,3 +44,15 @@ Route::get('/blog/category/{slug}', function ($slug) {
     $posts = $category->posts()->latest()->paginate(5);
     return view('blog', ['posts' => $posts]);
 })->name('blog.category');
+
+Route::get('/blog/tag/{slug}', function ($slug) {
+    $tag = \App\Tag::where('slug', '=', $slug)->first();
+    $posts = $tag->posts()->latest()->paginate(5);
+    return view('blog', ['posts' => $posts]);
+})->name('blog.tag');
+
+Route::get('/blog/author/{slug}', function ($slug) {
+    $user = \App\User::where('slug', '=', $slug)->first();
+    $posts = $user->posts()->latest()->paginate(5);
+    return view('blog', ['posts' => $posts]);
+})->name('blog.author');
