@@ -56,3 +56,19 @@ Route::get('/blog/author/{slug}', function ($slug) {
     $posts = $user->posts()->latest()->paginate(5);
     return view('blog', ['posts' => $posts]);
 })->name('blog.author');
+
+Route::get('/categories', 'CategoryController@index')->name('categories.index');
+Route::get('/categories/create', 'CategoryController@create')->name('categories.create');
+Route::post('/categories', 'CategoryController@store')->name('categories.store');
+Route::get('/categories/{category}', 'CategoryController@show')->name('categories.show');
+Route::get('/categories/{category}/edit', 'CategoryController@edit')->name('categories.edit');
+Route::put('/categories/{category}', 'CategoryController@put')->name('categories.put');
+Route::delete('/categories/{category}', 'CategoryController@destroy')->name('categories.destroy');
+
+Route::get('/tags', 'TagController@index')->name('tags.index');
+Route::get('/tags/create', 'TagController@create')->name('tags.create');
+Route::post('/tags', 'TagController@store')->name('tags.store');
+Route::get('/tags/{tag}', 'TagController@show')->name('tags.show');
+Route::get('/tags/{tag}/edit', 'TagController@edit')->name('tags.edit');
+Route::put('/tags/{tag}', 'TagController@put')->name('tags.put');
+Route::delete('/tags/{tag}', 'TagController@destroy')->name('tags.destroy');
