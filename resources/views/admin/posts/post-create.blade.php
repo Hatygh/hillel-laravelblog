@@ -157,9 +157,9 @@
             <label class="col-sm-2 col-form-label text-success" for="cover_image">Choose cover image</label>
             <input type="file" name="preview_cover">
             @error('preview_cover')
-            <small class="text-danger">
-                {{ $message }}
-            </small>
+                <small class="text-danger">
+                    {{ $message }}
+                </small>
             @enderror
         </div>
 
