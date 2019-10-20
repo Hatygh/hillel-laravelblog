@@ -5,7 +5,7 @@
 
         <!-- Featured Post Area -->
         <div class="featured-posts">
-            <a href="#"><img src="/img/blog-img/1.jpg" alt=""></a>
+            <a href="#"><img src="/storage/cover_images/1.jpg" alt=""></a>
             <!-- Featured Post Content -->
             <div class="featured-post-content">
                 <p>MAY 8, 2018 / foody</p>

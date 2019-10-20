@@ -98,3 +98,6 @@ Route::get('/admin/logout', function(){
 Route::get('/admin/member', function(){
     $user = \Illuminate\Support\Facades\Auth::user();
 })->middleware('auth')->name('admin.auth.member');
+
+Route::get('/admin/register', 'RegistrationController@create')->name('users.create');
+Route::post('admin/register', 'RegistrationController@store')->name('users.store');

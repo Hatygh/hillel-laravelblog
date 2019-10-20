@@ -23,7 +23,7 @@
                        @endif>
                     @foreach($users as $user)
                         <option
-                            @if ($user->id == @old('user_id'))
+                            @if ($user->id == @old('user_id', \Illuminate\Support\Facades\Auth::user()->id))
                                 selected
                             @endif
                             value="{{ $user->id }}">{{ $user->name }}</option>

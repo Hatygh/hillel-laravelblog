@@ -462,7 +462,7 @@ img {
         .header-area .foode-main-menu .classynav ul li ul li a {
           padding: 0 30px; } }
     .header-area .foode-main-menu .classynav ul li .megamenu {
-      background-image: url(img/blog-img/1.jpg);
+      background-image: url(/storage/cover_images/1.jpg);
       background-position: center center;
       background-size: cover; }
       .header-area .foode-main-menu .classynav ul li .megamenu .single-mega {
