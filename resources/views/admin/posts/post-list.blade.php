@@ -17,21 +17,22 @@
             </div>
         @endif
         <br>
-        <button><a href="{{ route('categories.create') }}">New Category</a></button>
+        <button><a href="{{ route('posts.create') }}">New Post</a></button>
         <br><br>
 
         <table class="table table-striped">
             <tbody>
-                @foreach($categories as $category)
+                @foreach($posts as $post)
                 <tr>
-                    <th scope="row">{{ $category->id }}</th>
-                    <td>{{ $category->name }}</td>
-                    <td>{{ $category->slug }}</td>
-                    <td>{{ $category->created_at }}</td>
-                    <td>{{ $category->updated_at }}</td>
-                    <td><button><a href="{{ route('categories.edit', $category->id) }}"><i class="fas fa-edit"></i></a></button></td>
+                    <th scope="row">{{ $post->id }}</th>
+                    <td>{{ $post->user->name }}</td>
+                    <td>{{ $post->category->name }}</td>
+                    <td>{{ $post->title }}</td>
+                    <td>{{ $post->created_at }}</td>
+                    <td>{{ $post->updated_at }}</td>
+                    <td><button><a href="{{ route('posts.edit', $post->id) }}"><i class="fas fa-edit"></i></a></button></td>
                     <td>
-                        <form method="post" action="{{ route('categories.destroy', $category->id) }}">
+                        <form method="post" action="{{ route('posts.destroy', $post->id) }}">
                             @method('delete')
                             @csrf
                             <button type="submit"><i class="fas fa-trash-alt"></i></button>

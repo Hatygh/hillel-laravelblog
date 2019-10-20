@@ -62,7 +62,7 @@ Route::get('/categories/create', 'CategoryController@create')->name('categories.
 Route::post('/categories', 'CategoryController@store')->name('categories.store');
 Route::get('/categories/{category}', 'CategoryController@show')->name('categories.show');
 Route::get('/categories/{category}/edit', 'CategoryController@edit')->name('categories.edit');
-Route::put('/categories/{category}', 'CategoryController@put')->name('categories.put');
+Route::put('/categories/{category}', 'CategoryController@update')->name('categories.update');
 Route::delete('/categories/{category}', 'CategoryController@destroy')->name('categories.destroy');
 
 Route::get('/tags', 'TagController@index')->name('tags.index');
@@ -70,5 +70,31 @@ Route::get('/tags/create', 'TagController@create')->name('tags.create');
 Route::post('/tags', 'TagController@store')->name('tags.store');
 Route::get('/tags/{tag}', 'TagController@show')->name('tags.show');
 Route::get('/tags/{tag}/edit', 'TagController@edit')->name('tags.edit');
-Route::put('/tags/{tag}', 'TagController@put')->name('tags.put');
+Route::put('/tags/{tag}', 'TagController@update')->name('tags.update');
 Route::delete('/tags/{tag}', 'TagController@destroy')->name('tags.destroy');
+
+Route::resource('posts', 'PostController');
+
+Route::get('admin/login', function(){
+    return view('admin.login');
+});
+
+Route::post('/admin/login', function(Illuminate\Http\Request $request){
+    $validatedData = $request->validate([
+        'email' => 'bail|required|email|exists:users,email|max:255',
+        'password' => 'bail|required|min:8|max:100',
+    ]);
+
+    if (\Illuminate\Support\Facades\Auth::attempt($validatedData)) {
+        dd('success');
+    }
+})->name('admin.auth.login');
+
+Route::get('/admin/logout', function(){
+    \Illuminate\Support\Facades\Auth::logout();
+    return redirect('/');
+})->middleware('auth');
+
+Route::get('/admin/member', function(){
+    $user = \Illuminate\Support\Facades\Auth::user();
+})->middleware('auth')->name('admin.auth.member');

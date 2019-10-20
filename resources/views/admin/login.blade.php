@@ -12,55 +12,48 @@
 
 <div class="container">
     <br>
-    <form method="post" action="{{ route('tags.store') }}">
+    <form method="post" action="{{ route('admin.auth.login') }}">
         @csrf
         <div class="form-group row">
-            <label for="name" class="col-sm-2 col-form-label text-success">Tag</label>
+            <label for="email" class="col-sm-2 col-form-label text-success">Email</label>
             <div class="col-sm-7">
                 <input type="text"
-                       @if ($errors->has('name')) class="form-control is-invalid"
+                       @if ($errors->has('email')) class="form-control is-invalid"
                        @else class="form-control is-valid"
                        @endif
-                       name="name" placeholder="Tag" value="{{ @old('name') }}">
+                       name="email" placeholder="Email" value="{{ @old('email')}}">
             </div>
-            @if ($errors->has('name'))
+            @error('email')
                 <div class="col-sm-3">
-                    @foreach ($errors->get('name') as $error)
-                        <small class="text-danger">
-                            {{ $error }}
-                        </small>
-                    @endforeach
+                    <small class="text-danger">
+                        {{ $message }}
+                    </small>
                 </div>
-            @endif
+            @enderror
         </div>
 
         <div class="form-group row">
-            <label for="slug" class="col-sm-2 col-form-label text-success">Slug</label>
+            <label for="password" class="col-sm-2 col-form-label text-success">Password</label>
             <div class="col-sm-7">
-                <input type="text"
-                       @if ($errors->has('slug')) class="form-control is-invalid"
+                <input type="password"
+                       @if ($errors->has('password')) class="form-control is-invalid"
                        @else class="form-control is-valid"
                        @endif
-                       name="slug" placeholder="Slug" value="{{ @old('slug') }}">
+                       name="password" placeholder="Password" value="{{ @old('password')}}">
             </div>
-            @if ($errors->has('slug'))
+            @error('password')
                 <div class="col-sm-3">
-                    @foreach ($errors->get('slug') as $error)
-                        <small class="text-danger">
-                            {{ $error }}
-                        </small>
-                    @endforeach
+                    <small class="text-danger">
+                        {{ $message }}
+                    </small>
                 </div>
-            @endif
+            @enderror
         </div>
         <div class = "form-group row">
-            <input type = "submit" value = "Create">
+            <input type = "submit" value = "Sign in">
         </div>
-
     </form>
 </div>
 
 </body>
 </html>
-
-

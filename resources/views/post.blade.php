@@ -6,7 +6,7 @@
         <!-- Post Details Area -->
         <div class="single-post-details-area">
             <div class="post-thumbnail mb-30">
-                <img src="/img/blog-img/1.jpg" alt="">
+                <img src="/storage/{{ $post->preview_cover }}" alt="">
             </div>
             <div class="post-content">
                 <p class="post-date">{{ $post->created_at->format('F d, Y') }} / {{ $post->category->name }}</p>
@@ -54,7 +54,7 @@
                     <div class="single-blog-post related-post">
                         <!-- Thumbnail -->
                         <div class="post-thumbnail mb-50">
-                            <a href="#"><img src="/img/blog-img/13.jpg" alt=""></a>
+                            <a href="#"><img src="/storage/cover_images/13.jpg" alt=""></a>
                         </div>
                         <!-- Content -->
                         <div class="post-content mb-50">
@@ -76,7 +76,7 @@
                     <div class="single-blog-post related-post">
                         <!-- Thumbnail -->
                         <div class="post-thumbnail mb-50">
-                            <a href="#"><img src="/img/blog-img/14.jpg" alt=""></a>
+                            <a href="#"><img src="/storage/cover_images/14.jpg" alt=""></a>
                         </div>
                         <!-- Content -->
                         <div class="post-content mb-50">
@@ -109,7 +109,7 @@
                     <div class="comment-wrapper d-flex">
                         <!-- Comment Meta -->
                         <div class="comment-author">
-                            <img src="/img/blog-img/15.jpg" alt="">
+                            <img src="/storage/cover_images/15.jpg" alt="">
                         </div>
                         <!-- Comment Content -->
                         <div class="comment-content">
@@ -125,7 +125,7 @@
                             <div class="comment-wrapper d-flex">
                                 <!-- Comment Meta -->
                                 <div class="comment-author">
-                                    <img src="/img/blog-img/16.jpg" alt="">
+                                    <img src="/storage/cover_images/16.jpg" alt="">
                                 </div>
                                 <!-- Comment Content -->
                                 <div class="comment-content">
@@ -143,7 +143,7 @@
                     <div class="comment-wrapper d-flex">
                         <!-- Comment Meta -->
                         <div class="comment-author">
-                            <img src="/img/blog-img/17.jpg" alt="">
+                            <img src="/storage/cover_images/17.jpg" alt="">
                         </div>
                         <!-- Comment Content -->
                         <div class="comment-content">

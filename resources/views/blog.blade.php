@@ -20,7 +20,7 @@
         <div class="single-blog-post d-flex flex-wrap mt-50">
             <!-- Thumbnail -->
             <div class="post-thumbnail mb-50">
-                <a href="#"><img src="/img/blog-img/{{ $post->preview_image }}" alt=""></a>
+                <a href="{{ route('blog.post', $post->id) }}"><img src="/storage/{{ $post->preview_image }}" alt=""></a>
             </div>
             <!-- Content -->
             <div class="post-content mb-50">

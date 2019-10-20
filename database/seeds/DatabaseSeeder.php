@@ -24,16 +24,16 @@ class DatabaseSeeder extends Seeder
 //        $category->save();
 
         $categories = [
-            ['name' => 'Features', 'slug' => 'features'],
-            ['name' => 'Food', 'slug' => 'food'],
-            ['name' => 'Travel', 'slug' => 'travel'],
-            ['name' => 'Recipe', 'slug' => 'recipe'],
-            ['name' => 'Bread', 'slug' => 'bread'],
-            ['name' => 'Breakfast', 'slug' => 'breakfast'],
-            ['name' => 'Meat', 'slug' => 'meat'],
-            ['name' => 'Fastfood', 'slug' => 'fastfood'],
-            ['name' => 'Salad', 'slug' => 'salad'],
-            ['name' => 'Soup', 'slug' => 'soup'],
+            ['name' => 'Features', 'slug' => 'features', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['name' => 'Food', 'slug' => 'food', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['name' => 'Travel', 'slug' => 'travel', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['name' => 'Recipe', 'slug' => 'recipe', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['name' => 'Bread', 'slug' => 'bread', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['name' => 'Breakfast', 'slug' => 'breakfast', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['name' => 'Meat', 'slug' => 'meat', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['name' => 'Fastfood', 'slug' => 'fastfood', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['name' => 'Salad', 'slug' => 'salad', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['name' => 'Soup', 'slug' => 'soup', 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
         ];
         DB::table('categories')->insert($categories);
 
@@ -53,8 +53,8 @@ class DatabaseSeeder extends Seeder
                 $post_tag[] = [
                     'post_id' => $post->id,
                     'tag_id' => $tag->id,
-                    'created_at' => date('Y-m-d'),
-                    'updated_at' => date('Y-m-d'),
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s'),
                 ];
             }
         }

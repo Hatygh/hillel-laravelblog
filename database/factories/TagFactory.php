@@ -23,5 +23,7 @@ $factory->define(Tag::class, function (Faker\Generator $faker) {
     return [
         'name' => $name,
         'slug' => $slug,
+        'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
+        'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
     ];
 });

@@ -9,7 +9,7 @@
     @foreach($latest_posts as $latest_post)
     <div class="single-latest-post d-flex">
         <div class="post-thumb">
-            <img src="/img/blog-img/{{ $latest_post->preview_image }}" alt="">
+            <img src="/storage/{{ $latest_post->preview_image }}" alt="">
         </div>
         <div class="post-content">
             <a href="{{ route('blog.post', $latest_post->id) }}" class="post-title">

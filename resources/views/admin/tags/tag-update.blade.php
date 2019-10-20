@@ -12,7 +12,8 @@
 
 <div class="container">
     <br>
-    <form method="post" action="{{ route('tags.store') }}">
+    <form method="post" action="{{ route('tags.update', $tag) }}">
+        @method('put')
         @csrf
         <div class="form-group row">
             <label for="name" class="col-sm-2 col-form-label text-success">Tag</label>
@@ -21,7 +22,7 @@
                        @if ($errors->has('name')) class="form-control is-invalid"
                        @else class="form-control is-valid"
                        @endif
-                       name="name" placeholder="Tag" value="{{ @old('name') }}">
+                       name="name" placeholder="Tag" value="{{ @old('name', $tag->name) }}">
             </div>
             @if ($errors->has('name'))
                 <div class="col-sm-3">
@@ -41,7 +42,7 @@
                        @if ($errors->has('slug')) class="form-control is-invalid"
                        @else class="form-control is-valid"
                        @endif
-                       name="slug" placeholder="Slug" value="{{ @old('slug') }}">
+                       name="slug" placeholder="Slug" value="{{ @old('slug', $tag->slug) }}">
             </div>
             @if ($errors->has('slug'))
                 <div class="col-sm-3">
@@ -54,7 +55,7 @@
             @endif
         </div>
         <div class = "form-group row">
-            <input type = "submit" value = "Create">
+            <input type = "submit" value = "Update">
         </div>
 
     </form>

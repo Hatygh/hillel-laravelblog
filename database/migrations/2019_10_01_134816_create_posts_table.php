@@ -19,10 +19,10 @@ class CreatePostsTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table->string('title');
             $table->string('preview_text');
-            $table->unsignedBigInteger('views');
+            $table->unsignedBigInteger('views')->default(0);
             $table->text('body');
-            $table->string('preview_image');
-            $table->string('preview_cover');
+            $table->string('preview_image')->nullable()->default(null);
+            $table->string('preview_cover')->nullable()->default(null);
             $table->timestamps();
         });
     }
