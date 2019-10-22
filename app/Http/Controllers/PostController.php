@@ -95,7 +95,9 @@ class PostController {
     }
 
     public function postsByDate($date) {
-
+        $processed_date = null;
+        $posts = Post::whereBetween('created_at', [$date." 00:00:00",$date." 23:59:59"])->latest()->paginate(10);
+        return view('blog', ['posts' => $posts]);
     }
 
     public function postsByDateAndCategory($date, $category) {

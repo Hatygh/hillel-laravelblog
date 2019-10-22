@@ -13,9 +13,9 @@ class AddIndexByAuthorAndCategoryToPost extends Migration
      */
     public function up()
     {
-//        Schema::table('posts', function (Blueprint $table) {
-//            $table->index(['user_id', 'category_id']);
-//        });
+        Schema::table('posts', function (Blueprint $table) {
+            $table->index(['user_id', 'category_id']);
+        });
     }
 
     /**
@@ -25,8 +25,10 @@ class AddIndexByAuthorAndCategoryToPost extends Migration
      */
     public function down()
     {
-//        Schema::table('posts', function (Blueprint $table) {
-//            $table->dropIndex(['user_id', 'category_id']);
-//        });
+        Schema::table('posts', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+            $table->dropIndex(['user_id', 'category_id']);
+            $table->foreign('user_id')->references('id')->on('users');
+        });
     }
 }

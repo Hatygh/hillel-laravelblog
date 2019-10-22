@@ -113,4 +113,6 @@ Route::get('/blog/{$date}', 'PostController@postsByDate')->name('blog.byDate');
 Route::get('/blog/{$date, $category}', 'PostController@postsByDateAndCategory')->name('blog.byDateAndCategory');
 Route::get('/blog/{$user, $category}', 'PostController@postsByAuthorAndCategory')->name('blog.byAuthorAndCategory');
 
-Route::post('/comments/', 'CommentController@store')->name('comments.store');
+Route::post('/comments/', 'CommentController@store')->middleware('auth')->name('comments.store');
+
+
