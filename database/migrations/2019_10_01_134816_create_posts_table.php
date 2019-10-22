@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('preview_text');
             $table->unsignedBigInteger('views')->default(0);
+            $table->unsignedInteger('comments')->nullable()->default(0);
             $table->text('body');
             $table->string('preview_image')->nullable()->default(null);
             $table->string('preview_cover')->nullable()->default(null);

@@ -93,4 +93,16 @@ class PostController {
 
         return redirect(route('posts.index'))->with('success', "Post '{$post->title}' successfully deleted");
     }
+
+    public function postsByDate($date) {
+
+    }
+
+    public function postsByDateAndCategory($date, $category) {
+
+    }
+
+    public function postsByAuthorAndCategory($user, $category) {
+
+    }
 }

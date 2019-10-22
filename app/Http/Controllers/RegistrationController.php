@@ -23,7 +23,7 @@ class RegistrationController {
         $user->slug = \Illuminate\Support\Str::slug($validatedData['name']);
         $user->email = $validatedData['email'];
         $user->email_verified_at = now();
-        $user->password = $validatedData['password'];
+        $user->password = \Illuminate\Support\Facades\Hash::make($validatedData['password']);
         $user->remember_token = \Illuminate\Support\Str::random(10);
         $user->save();
 

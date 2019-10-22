@@ -59,5 +59,7 @@ class DatabaseSeeder extends Seeder
             }
         }
         DB::table('post_tag')->insert($post_tag);
+
+        factory(\App\Comment::class, 400)->create();
     }
 }

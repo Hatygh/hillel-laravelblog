@@ -36,7 +36,11 @@ Route::get('/blog', function () {
 Route::get('/post/{post}', function (\App\Post $post) {
     //$post = \App\Post::find($id);
     $post->increment('views');
-    return view('post', ['post' => $post]);
+    $comments = $post->comments()->latest()->paginate(10);
+    return view('post', [
+        'post' => $post,
+        'comments' => $comments,
+    ]);
 })->name('blog.post');
 
 Route::get('/blog/category/{slug}', function ($slug) {
@@ -86,8 +90,11 @@ Route::post('/admin/login', function(Illuminate\Http\Request $request){
     ]);
 
     if (\Illuminate\Support\Facades\Auth::attempt($validatedData)) {
-        dd('success');
+        $user = \Illuminate\Support\Facades\Auth::user();
+        return redirect('/')->with('success', "Welcome, {$user->name}");
     }
+    else
+        return redirect( route('admin.auth.login'))->with('success', "Email or password are wrong");
 })->name('admin.auth.login');
 
 Route::get('/admin/logout', function(){
@@ -101,3 +108,9 @@ Route::get('/admin/member', function(){
 
 Route::get('/admin/register', 'RegistrationController@create')->name('users.create');
 Route::post('admin/register', 'RegistrationController@store')->name('users.store');
+
+Route::get('/blog/{$date}', 'PostController@postsByDate')->name('blog.byDate');
+Route::get('/blog/{$date, $category}', 'PostController@postsByDateAndCategory')->name('blog.byDateAndCategory');
+Route::get('/blog/{$user, $category}', 'PostController@postsByAuthorAndCategory')->name('blog.byAuthorAndCategory');
+
+Route::post('/comments/', 'CommentController@store')->name('comments.store');

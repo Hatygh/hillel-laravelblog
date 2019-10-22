@@ -57,6 +57,7 @@
                             </ol>
                         </div>
 
+{{--                        @include('widget-calendar_input')--}}
                         @include('widget-popular-tags')
                     @show
                     </div>

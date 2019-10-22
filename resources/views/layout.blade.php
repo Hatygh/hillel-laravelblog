@@ -17,6 +17,9 @@
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="/style.css">
 
+    <!-- Date picker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css"/>
+
 </head>
 
 <body>
@@ -32,6 +35,13 @@
 
 <!-- ##### Header Area Start ##### -->
 <header class="header-area">
+
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+    <br>
 
     <!-- Top Header Area -->
     <div class="top-header">
@@ -156,6 +166,9 @@
 <script src="/js/plugins/plugins.js"></script>
 <!-- Active js -->
 <script src="/js/active.js"></script>
+<!-- DatePicker -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+<script src="/js/datepicker.js"></script>
 </body>
 
 </html>
