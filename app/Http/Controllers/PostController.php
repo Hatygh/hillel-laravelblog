@@ -95,16 +95,24 @@ class PostController {
     }
 
     public function postsByDate($date) {
-        $processed_date = null;
-        $posts = Post::whereBetween('created_at', [$date." 00:00:00",$date." 23:59:59"])->latest()->paginate(10);
+        $processed_date = \Carbon\Carbon::parse($date);
+        echo Carbon::parse('2018-07-25 12:45:16')->startOfDay();
+        $posts = \App\Post::whereBetween('created_at', [$processed_date->startOfDay(),$processed_date->endOfDay()])->latest()->paginate(10);
         return view('blog', ['posts' => $posts]);
     }
 
-    public function postsByDateAndCategory($date, $category) {
-
+    public function postsByDateAndCategory($date, $category_slug) {
+        $processed_date = \Carbon\Carbon::parse($date);
+        echo Carbon::parse('2018-07-25 12:45:16')->startOfDay();
+        $category = \App\Category::where('slug', '=', $category_slug)->first();
+        $posts = \App\Post::whereBetween('created_at', [$processed_date->startOfDay(),$processed_date->endOfDay()])->where('category_id', '=', $category->id)->latest()->paginate(10);
+        return view('blog', ['posts' => $posts]);
     }
 
-    public function postsByAuthorAndCategory($user, $category) {
-
+    public function postsByAuthorAndCategory($user_slug, $category_slug) {
+        $category = \App\Category::where('slug', '=', $category_slug)->first();
+        $user = \App\User::where('slug', '=', $user_slug)->first();
+        $posts = \App\User::posts()->where('category_id', '=', $category->id)->latest()->paginate(10);
+        return view('blog', ['posts' => $posts]);
     }
 }

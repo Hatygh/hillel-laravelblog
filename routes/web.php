@@ -109,9 +109,9 @@ Route::get('/admin/member', function(){
 Route::get('/admin/register', 'RegistrationController@create')->name('users.create');
 Route::post('admin/register', 'RegistrationController@store')->name('users.store');
 
-Route::get('/blog/{$date}', 'PostController@postsByDate')->name('blog.byDate');
-Route::get('/blog/{$date, $category}', 'PostController@postsByDateAndCategory')->name('blog.byDateAndCategory');
-Route::get('/blog/{$user, $category}', 'PostController@postsByAuthorAndCategory')->name('blog.byAuthorAndCategory');
+Route::get('/blog/date/{$date}', 'PostController@postsByDate')->where(['date' => '[0-9]{4}-[0-9]{1,}-[0-9]{1,}'])->name('blog.byDate');
+Route::get('/blog/date/{$date}/category/{$slug}', 'PostController@postsByDateAndCategory')->where(['date' => '[0-9]{4}-[0-9]{1,}-[0-9]{1,}'])->name('blog.byDateAndCategory');
+Route::get('/blog/user/{$user_slug}/category/{$category_slug}', 'PostController@postsByAuthorAndCategory')->name('blog.byAuthorAndCategory');
 
 Route::post('/comments/', 'CommentController@store')->middleware('auth')->name('comments.store');
 
