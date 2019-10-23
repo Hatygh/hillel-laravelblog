@@ -12,6 +12,8 @@
         "doctrine/dbal": "^2.9",
         "fideloper/proxy": "^4.0",
         "fzaninotto/faker": "^1.8",
+        "guzzlehttp/guzzle": "^6.3",
+        "jeroennoten/laravel-adminlte": "^2.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0"
     },

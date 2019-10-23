@@ -115,4 +115,10 @@ Route::get('/blog/user/{$user_slug}/category/{$category_slug}', 'PostController@
 
 Route::post('/comments/', 'CommentController@store')->middleware('auth')->name('comments.store');
 
+Route::get('/admin', function(){
+    return view('admin/dashboard');
+});
+
+
+
 

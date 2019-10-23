@@ -44,6 +44,39 @@ class PostController {
         $post->preview_cover = $request->file('preview_cover')->store('cover_images', 'public');
         $post->save();
 
+        $client = new \GuzzleHttp\Client();
+        $path_to_image = '/var/www/html/public' . \Illuminate\Support\Facades\Storage::url($post->preview_cover);
+        $image = fopen($path_to_image, 'r') or die("Unable to open file!");
+        $bot_id = '970685947:AAFqhvlKBcKoy0r47TJASTdJMfPHQBmeDLI';
+        $chat_id = '493150066';
+        $url = 'https://api.telegram.org/bot' . $bot_id . '/sendPhoto';
+        $parameters = [
+            'chat_id' => $chat_id,
+            'photo' => $image,
+            'caption' => 'check out new post ',
+        ];
+        $client->request('POST', $url, [
+            'multipart' => [
+                [
+                    'name' => 'chat_id',
+                    'contents' => $chat_id,
+                ],
+                [
+                    'name' => 'photo',
+                    'contents' => $image,
+                    'filename' => '1.jpg',
+                ],
+                [
+                    'name' => 'caption',
+                    'contents' => "<a href='" . route('blog.post', $post->id) . "'> Check out new post " . $post->title . "</a>",
+                ],
+                [
+                    'name' => 'parse_mode',
+                    'contents' => 'HTML',
+                ],
+            ]
+        ]);
+
         return redirect(route('posts.index'))->with('success', "Post '{$post->title}' successfully created");
     }
 
